@@ -1,0 +1,14 @@
+{
+  "name": "AndySolution",
+  "displayName": "AndySolution",
+  "splash": {
+    "image": "",
+    "resizeMode": "contain"
+  },
+  "ios": {
+    "supportsTablet": true
+  },
+  "updates": {
+    "fallbackToCacheTimeout": 0
+  }
+}
