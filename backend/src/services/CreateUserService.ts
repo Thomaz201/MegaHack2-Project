@@ -2,16 +2,10 @@ import { hash } from 'bcryptjs';
 import User from '../models/users';
 import UsersRepository from '../repositories/userRepository';
 
-interface GoalUserDTO {
-  total: number;
-  sparedValue: number;
-}
-
 interface RequestDTO {
   password: string;
   email: string;
   username: string;
-  goal?: Array<GoalUserDTO>;
 }
 
 class CreateUserService {
@@ -25,7 +19,6 @@ class CreateUserService {
     username,
     email,
     password,
-    goal,
   }: RequestDTO): Promise<User> {
     const checkUserExists = this.userRepository.findEqual(email);
 
@@ -39,7 +32,6 @@ class CreateUserService {
       email,
       password: hashedPassword,
       username,
-      goal,
     });
     return user;
   }

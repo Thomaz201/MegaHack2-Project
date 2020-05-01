@@ -18,7 +18,7 @@ usersRouter.get('/', (request, response) => {
 
 usersRouter.post('/', async (request, response) => {
   try {
-    const { username, email, password, goal } = request.body;
+    const { username, email, password } = request.body;
 
     const createUser = new CreateUserService(userRepository);
 
@@ -26,7 +26,6 @@ usersRouter.post('/', async (request, response) => {
       username,
       password,
       email,
-      goal,
     });
 
     return response.json(user);

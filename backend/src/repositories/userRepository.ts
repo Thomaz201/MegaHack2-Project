@@ -1,15 +1,9 @@
 import User from '../models/users';
 
-interface GoalUserDTO {
-  total: number;
-  sparedValue: number;
-}
-
 interface UserDTO {
   password: string;
   email: string;
   username: string;
-  goal?: Array<GoalUserDTO>;
 }
 
 class UsersRepository {
@@ -23,14 +17,15 @@ class UsersRepository {
     return this.users;
   }
 
-  public create({ email, password, username, goal }: UserDTO): User {
-    const user = new User({ email, password, username, goal });
+  public create({ email, password, username }: UserDTO): User {
+    const user = new User({ email, password, username });
 
     this.users.push(user);
 
     return user;
   }
 
+  // Validação do email
   public findEqual(email: string): User | null {
     const findUser = this.users.find(user => email === user.email);
 
