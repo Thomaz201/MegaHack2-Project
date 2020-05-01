@@ -30,6 +30,12 @@ class UsersRepository {
 
     return user;
   }
+
+  public findEqual(email: string): User | null {
+    const findUser = this.users.find(user => email === user.email);
+
+    return findUser || null;
+  }
 }
 
 export default UsersRepository;

@@ -1,3 +1,4 @@
+import { hash } from 'bcryptjs';
 import User from '../models/users';
 import UsersRepository from '../repositories/userRepository';
 
@@ -20,10 +21,23 @@ class CreateUserService {
     this.userRepository = userRepository;
   }
 
-  public execute({ username, email, password, goal }: RequestDTO): User {
+  public async execute({
+    username,
+    email,
+    password,
+    goal,
+  }: RequestDTO): Promise<User> {
+    const checkUserExists = this.userRepository.findEqual(email);
+
+    if (checkUserExists) {
+      throw new Error('This user already exists');
+    }
+
+    const hashedPassword = await hash(password, 8);
+
     const user = this.userRepository.create({
       email,
-      password,
+      password: hashedPassword,
       username,
       goal,
     });
