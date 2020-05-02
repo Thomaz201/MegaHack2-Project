@@ -1,4 +1,3 @@
-import { startOfHour } from 'date-fns';
 import { getRepository } from 'typeorm';
 import Goal from '../models/goals';
 
@@ -20,8 +19,6 @@ class CreateGoalService {
   }: RequestDTO): Promise<Goal> {
     const goalsRepository = getRepository(Goal);
 
-    const goalDate = startOfHour(date);
-
     if (sparedvalue >= totalvalue) {
       throw new Error('You saved more money than your goal');
     }
@@ -30,7 +27,7 @@ class CreateGoalService {
       name,
       totalvalue,
       sparedvalue,
-      date: goalDate,
+      date,
       userid,
     });
 
