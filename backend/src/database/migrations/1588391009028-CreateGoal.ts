@@ -25,10 +25,11 @@ export default class CreateGoal1588391009028 implements MigrationInterface {
           {
             name: 'name',
             type: 'varchar',
+            isUnique: true,
           },
           {
             name: 'date',
-            type: 'timestamp with time zone',
+            type: 'date',
           },
           {
             name: 'totalvalue',
