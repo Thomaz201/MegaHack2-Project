@@ -1,23 +1,44 @@
-import { uuid } from 'uuidv4';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
 
+import User from './users';
+
+@Entity('goals')
 class Goal {
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Column()
   name: string;
 
+  @Column()
   totalvalue: number;
 
+  @Column()
   sparedvalue: number;
 
-  userid?: string;
+  @Column()
+  userid: string;
 
-  constructor({ name, totalvalue, sparedvalue, userid }: Omit<Goal, 'id'>) {
-    this.id = uuid();
-    this.name = name;
-    this.totalvalue = totalvalue;
-    this.sparedvalue = sparedvalue;
-    this.userid = userid;
-  }
+  @ManyToOne(() => User)
+  @JoinColumn({ name: 'userid' })
+  owner: User;
+
+  @Column()
+  date: Date;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 }
 
 export default Goal;

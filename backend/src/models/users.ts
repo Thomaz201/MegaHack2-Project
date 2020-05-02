@@ -1,20 +1,37 @@
-import { uuid } from 'uuidv4';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  OneToMany,
+} from 'typeorm';
 
+import Goal from './goals';
+import usersRouter from '../routes/user.routes';
+
+@Entity('users')
 class User {
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Column()
   password: string;
 
+  @Column()
   email: string;
 
-  username: string;
+  @Column()
+  name: string;
 
-  constructor({ username, email, password }: Omit<User, 'id'>) {
-    this.id = uuid();
-    this.username = username;
-    this.password = password;
-    this.email = email;
-  }
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
+
+  @OneToMany(() => Goal, goal => goal.userid)
+  goal_owned: Goal[];
 }
 
 export default User;

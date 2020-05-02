@@ -1,22 +1,25 @@
 import { Router } from 'express';
+import { parseISO } from 'date-fns';
 import CreateGoalService from '../services/CreateGoalService';
-import GoalsRepository from '../repositories/goalRepository';
 
 const goalsRouter = Router();
 
-const goalRepository = new GoalsRepository();
-
-goalsRouter.post('/', (request, response) => {
+goalsRouter.post('/', async (request, response) => {
   try {
-    const { name, totalvalue, sparedvalue, userid } = request.body;
+    const { name, totalvalue, sparedvalue, date } = request.body;
 
-    const createGoal = new CreateGoalService(goalRepository);
+    const userid = request.headers.authorization;
 
-    const goal = createGoal.execute({
+    const parsedDate = parseISO(date);
+
+    const createGoal = new CreateGoalService();
+
+    const goal = await createGoal.execute({
       name,
       totalvalue,
       sparedvalue,
       userid,
+      date: parsedDate,
     });
 
     return response.json(goal);

@@ -1,27 +1,40 @@
+import { startOfHour } from 'date-fns';
+import { getRepository } from 'typeorm';
 import Goal from '../models/goals';
-import GoalsRepository from '../repositories/goalRepository';
 
 interface RequestDTO {
   name: string;
   totalvalue: number;
   sparedvalue: number;
-  userid: string;
+  date: Date;
+  userid: string | undefined;
 }
 
 class CreateGoalService {
-  private goalRepository: GoalsRepository;
+  public async execute({
+    name,
+    totalvalue,
+    sparedvalue,
+    date,
+    userid,
+  }: RequestDTO): Promise<Goal> {
+    const goalsRepository = getRepository(Goal);
 
-  constructor(goalRepository: GoalsRepository) {
-    this.goalRepository = goalRepository;
-  }
+    const goalDate = startOfHour(date);
 
-  public execute({ name, totalvalue, sparedvalue, userid }: RequestDTO): Goal {
-    const goal = this.goalRepository.create({
+    if (sparedvalue >= totalvalue) {
+      throw new Error('You saved more money than your goal');
+    }
+
+    const goal = goalsRepository.create({
       name,
       totalvalue,
       sparedvalue,
+      date: goalDate,
       userid,
     });
+
+    await goalsRepository.save(goal);
 
     return goal;
   }
