@@ -6,7 +6,7 @@ import styles from './styles';
 export default function Home() {
   return (
     <>
-      <StatusBar barStyle='light-content' backgroundColor='#70A9' />
+      <StatusBar barStyle='light-content' backgroundColor='#7151c9' />
       <SafeAreaView style={styles.container}>
         <View style={styles.header}>
           <Text style={styles.headerText}>
