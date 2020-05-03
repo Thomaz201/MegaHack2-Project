@@ -8,7 +8,6 @@ import {
 } from 'typeorm';
 
 import Goal from './goals';
-import usersRouter from '../routes/user.routes';
 
 @Entity('users')
 class User {

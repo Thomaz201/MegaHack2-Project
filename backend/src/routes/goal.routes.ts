@@ -63,9 +63,9 @@ goalsRouter.patch('/:id', async (request, response) => {
 
     const updateGoal = new UpdateGoalService();
 
-    await updateGoal.execute(id, sparedvalue);
+    const newgoal = await updateGoal.execute(id, sparedvalue);
 
-    return response.status(204).json({ message: 'Altered' });
+    return response.status(204).json(newgoal);
   } catch (err) {
     return response.status(400).json({ error: err.message });
   }
