@@ -15,7 +15,7 @@ export default function FirstPage() {
   }
 
   function navigateToLogin() {
-    navigation.navigate('login');
+    navigation.navigate('Login');
   }
 
   return (

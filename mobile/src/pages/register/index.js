@@ -10,6 +10,14 @@ export default function Register() {
 
   const navigation = useNavigation();
 
+  function navigateToCardRegister() {
+    navigation.navigate('CardRegister');
+  }
+
+  function navigateToCongrats() {
+    navigation.navigate('Congrats');
+  }
+
   function navigateBack() {
     navigation.goBack();
   }
@@ -51,17 +59,17 @@ export default function Register() {
               <Text style={styles.passwordsubtitle}>Precisa ter ao menos 1 letra maiúscula</Text>
             </View>
             <View style={styles.checked}>
-              <CheckBox  />
+              <CheckBox />
               <Text style={styles.text}>Aceito os TERMOS & CONDIÇÕES</Text>
             </View>
           </View>
           <View style={styles.bottomContainer}>
-          <TouchableOpacity style={styles.button} activeOpacity={0.6}>
-            <Text style={styles.textbutton}>Concluir e Cadastrar Cartão</Text>
+            <TouchableOpacity style={styles.button} activeOpacity={0.6} onPress={() => navigateToCardRegister()}>
+              <Text style={styles.textbutton}>Concluir e Cadastrar Cartão</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button2} activeOpacity={0.6}>
-            <Text style={styles.textbutton2}>Adicionar o cartão depois</Text>
-          </TouchableOpacity>
+            <TouchableOpacity style={styles.button2} activeOpacity={0.6} onPress={() => navigateToCongrats()}>
+              <Text style={styles.textbutton2}>Adicionar o cartão depois</Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </SafeAreaView>
