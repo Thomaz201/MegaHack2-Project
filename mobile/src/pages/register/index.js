@@ -40,7 +40,7 @@ export default function Register() {
             <TextInput style={styles.inputText} placeholder={'Digite aqui'} keyboardType={'default'} ></TextInput>
           </View>
           <View style={styles.inputComponent}>
-            <Text style={styles.text}>Qual o seu e-mail?</Text>
+            <Text style={styles.text}>Qual seu e-mail?</Text>
             <TextInput style={styles.inputText} placeholder={'flourish@flourish.com'} keyboardType={'email-address'}></TextInput>
           </View>
           <View style={styles.inputComponent}>
@@ -65,10 +65,10 @@ export default function Register() {
           </View>
           <View style={styles.bottomContainer}>
             <TouchableOpacity style={styles.button} activeOpacity={0.6} onPress={() => navigateToCardRegister()}>
-              <Text style={styles.textbutton}>Concluir e Cadastrar Cartão</Text>
+              <Text style={styles.textbutton}>Concluir e Cadastrar Conta</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button2} activeOpacity={0.6} onPress={() => navigateToCongrats()}>
-              <Text style={styles.textbutton2}>Adicionar o cartão depois</Text>
+              <Text style={styles.textbutton2}>Adicionar a conta depois</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>

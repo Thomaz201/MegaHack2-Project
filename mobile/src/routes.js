@@ -6,6 +6,9 @@ import Home from './pages/home/index';
 import FirstPage from './pages/firstpage/index';
 import Register from './pages/register/index';
 import CardRegister from './pages/cardregister/index';
+import Login from './pages/login/index';
+import Congrats from './pages/congrats/index';
+import PasswordRecovery from './pages/passwordrecovery/index';
 
 const AppStack = createStackNavigator();
 
@@ -15,7 +18,10 @@ export default function Routes() {
       <AppStack.Navigator screenOptions={{ headerShown: false }}>
         <AppStack.Screen name='FirstPage' component={FirstPage} />
         <AppStack.Screen name='Register' component={Register} />
+        <AppStack.Screen name='Login' component={Login} />
+        <AppStack.Screen name='PasswordRecovery' component={PasswordRecovery} />
         <AppStack.Screen name='CardRegister' component={CardRegister} />
+        <AppStack.Screen name='Congrats' component={Congrats} />
         <AppStack.Screen name='Home' component={Home} />
       </AppStack.Navigator>
     </NavigationContainer>
