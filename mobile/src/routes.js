@@ -9,6 +9,7 @@ import CardRegister from './pages/cardregister/index';
 import Login from './pages/login/index';
 import Congrats from './pages/congrats/index';
 import PasswordRecovery from './pages/passwordrecovery/index';
+import Dashboard from './pages/dashboard/index';
 
 const AppStack = createStackNavigator();
 
@@ -23,6 +24,7 @@ export default function Routes() {
         <AppStack.Screen name='CardRegister' component={CardRegister} />
         <AppStack.Screen name='Congrats' component={Congrats} />
         <AppStack.Screen name='Home' component={Home} />
+        <AppStack.Screen name='Dashboard' component={Dashboard} />
       </AppStack.Navigator>
     </NavigationContainer>
   )
