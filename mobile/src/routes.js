@@ -10,6 +10,8 @@ import Login from './pages/login/index';
 import Congrats from './pages/congrats/index';
 import PasswordRecovery from './pages/passwordrecovery/index';
 import Dashboard from './pages/dashboard/index';
+import Goals from './pages/goals/index';
+import CreateGoal from './pages/creategoal/index';
 
 const AppStack = createStackNavigator();
 
@@ -25,6 +27,8 @@ export default function Routes() {
         <AppStack.Screen name='Congrats' component={Congrats} />
         <AppStack.Screen name='Home' component={Home} />
         <AppStack.Screen name='Dashboard' component={Dashboard} />
+        <AppStack.Screen name='Goals' component={Goals} />
+        <AppStack.Screen name='CreateGoal' component={CreateGoal} />
       </AppStack.Navigator>
     </NavigationContainer>
   )

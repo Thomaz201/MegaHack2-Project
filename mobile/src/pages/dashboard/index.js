@@ -12,7 +12,10 @@ import metas from '../../assets/metas.png';
 import friends from '../../assets/friends.png';
 import bell from '../../assets/bell.png';
 import user from '../../assets/user.png';
-
+import dica1 from '../../assets/dica1.png';
+import dica2 from '../../assets/dica2.png';
+import dica3 from '../../assets/dica3.png';
+import dica4 from '../../assets/dica4.png';
 
 export default function Dashboard() {
 
@@ -20,6 +23,10 @@ export default function Dashboard() {
 
   function navigateToExtract() {
     navigation.navigate('Extract');
+  }
+
+  function navigateToGoals() {
+    navigation.navigate('Goals');
   }
 
   const B = (props) => <Text style={{ fontWeight: 'bold' }}>{props.children}</Text>
@@ -55,34 +62,49 @@ export default function Dashboard() {
               <Image source={metapc} />
             </TouchableOpacity>
           </ScrollView>
+          <Text style={styles.hintsText}>Dicas</Text>
+          <View style={styles.hints}>
+          <TouchableOpacity style={styles.hintsobject} activeOpacity={0.6}>
+              <Image source={dica1} style={styles.imagehint} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.hintsobject} activeOpacity={0.6}>
+              <Image source={dica2} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.hintsobject} activeOpacity={0.6}>
+              <Image source={dica3} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.hintsobject} activeOpacity={0.6}>
+              <Image source={dica4} />
+            </TouchableOpacity>
+          </View>
         </ScrollView>
         {/* Menu de navegação */}
         <View style={styles.menu}>
           <View style={styles.menuObject}>
-            <TouchableOpacity style={styles.menuButton} activeOpacity={0.6}>
+            <TouchableOpacity style={styles.menuButton} activeOpacity={1}>
               <Image source={home} style={styles.menuIcon}></Image>
               <Text style={styles.menuText}>Início</Text>
             </TouchableOpacity>
             <View style={styles.menuObject}>
-              <TouchableOpacity style={styles.menuButton} activeOpacity={0.6}>
+              <TouchableOpacity style={styles.menuButton} activeOpacity={0.9} onPress={() => navigateToGoals()}>
                 <Image source={metas} style={styles.menuIcon}></Image>
                 <Text style={styles.menuText}>Metas</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.menuObject}>
-              <TouchableOpacity style={styles.menuButton} activeOpacity={0.6}>
+              <TouchableOpacity style={styles.menuButton} activeOpacity={0.9}>
                 <Image source={friends} style={styles.menuIcon}></Image>
                 <Text style={styles.menuText}>Amigos</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.menuObject}>
-              <TouchableOpacity style={styles.menuButton} activeOpacity={0.6}>
+              <TouchableOpacity style={styles.menuButton} activeOpacity={0.9}>
                 <Image source={bell} style={styles.menuIcon}></Image>
                 <Text style={styles.menuText}>Notificações</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.menuObject}>
-              <TouchableOpacity style={styles.menuButton} activeOpacity={0.6}>
+              <TouchableOpacity style={styles.menuButton} activeOpacity={0.9}>
                 <Image source={user} style={styles.menuIcon}></Image>
                 <Text style={styles.menuText}>Perfil</Text>
               </TouchableOpacity>

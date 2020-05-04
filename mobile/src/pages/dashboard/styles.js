@@ -98,6 +98,8 @@ const styles = StyleSheet.create({
     alignContent: 'space-around',
     position: 'absolute',
     bottom: 0,
+    borderTopColor: '#BEBEBE',
+    borderTopWidth: 1,
   },
 
   menuObject: {
@@ -113,7 +115,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#BEBEBE',
+    backgroundColor: '#D1D1D1',
     height: 60,
   },
 
@@ -121,6 +123,36 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginTop: 5
   },
+
+  hintsText: {
+    marginLeft: 10,
+    marginTop: 5,
+    paddingTop: 20,
+    fontFamily: 'SF',
+    fontSize: 16,
+    lineHeight: 32,
+    color: '#347178',
+    fontWeight: 'bold',
+  },
+
+  hintsobject: {
+    marginLeft: 7,
+    marginBottom: 20,
+
+  },
+
+  hints: {
+    flex: 1,
+    alignItems: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-evenly',
+    marginBottom: 65
+  },
+
+  imagehint: {
+    padding: 5,
+  }
 
 });
 
