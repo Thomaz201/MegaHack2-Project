@@ -59,7 +59,7 @@ Utilize o Insmonia ou aplicações similares para fazer requisições ao back-en
 
 ## Criadores e Proprietários
 
-* [Lucas](https://www.linkedin.com/in/lucas-thomaz-ribeiro-a5ab761a7/) - Junior Full Stack Developer
+* [Thomaz](https://www.linkedin.com/in/lucas-thomaz-ribeiro-a5ab761a7/) - Junior Full Stack Developer
 * [Alexandre](https://www.linkedin.com/in/alexandre-kovaleski-rocha-a42960161/) - Junior Full Stack Developer
 * [Maurides](https://www.linkedin.com/in/maurides-carlos-oliveira-j%C3%BAnior-3b8aab156/) - BI Manager
 * [Ary](https://www.linkedin.com/in/ary-dr-6a125116/) -  Physicist and PhD in Nuclear Technology
